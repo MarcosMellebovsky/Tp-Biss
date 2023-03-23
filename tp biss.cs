@@ -15,40 +15,55 @@ Console.Clear();
 switch (opciones)
 {
     case 1:
-    opcion1(ref totalPlata, ref cantCurso, ref elQueMas, ref cursoMayor);
+    opcion1(ref totalPlata, ref cantCurso, ref elQueMas, ref cursoMayor,cursoYSuPlata);
     break;
     case 2:
-    opcion2(  totalPlata,   cantCurso,   elQueMas,   cursoMayor);
+    opcion2(  totalPlata,   cantCurso,   elQueMas,   cursoMayor,cursoYSuPlata);
     break;
     case 3:
     respuesta = opcion3(respuesta);
     break;
 }
 }
-void opcion1(ref int totalPlata, ref int cantCurso, ref int elQueMas, ref string cursoMayor)
+void opcion1(ref int totalPlata, ref int cantCurso, ref int elQueMas, ref string cursoMayor,Dictionary<string ,int> cursoYSuPlata)
 { 
 int validoDeDinero, alumnos, cantAlumnos;
 int totalDeCurso = 0;
 string curso;
 alumnos = 0;
-curso = ingresarCurso("Ingresa el curso");
+curso = ingresarCurso("Ingresa el curso", cursoYSuPlata);
 cantCurso++;
 cantAlumnos = pedirAlumnos();
 for (int i = 0; i < cantAlumnos-1; i++)
 {
-    valifarDineroDelCumple(alumnos, ref totalPlata, ref totalDeCurso);
+    valifarDineroDelCumple(alumnos, ref totalPlata, ref totalDeCurso, cursoYSuPlata );
 }
-validoDeDinero = valifarDineroDelCumple(alumnos, ref totalPlata, ref totalDeCurso );
+validoDeDinero = valifarDineroDelCumple(alumnos, ref totalPlata, ref totalDeCurso,  cursoYSuPlata );
 if (totalDeCurso > elQueMas )
 {
     elQueMas = totalDeCurso;
     cursoMayor = curso;
 }
-string ingresarCurso(string mensaje)
+cursoYSuPlata.Add(curso, totalDeCurso);
+string ingresarCurso(string mensaje,Dictionary<string ,int> cursoYSuPlata )
 {
-    string curso;
+    string curso = "";
+    string verificador = "";
     Console.WriteLine(mensaje);
+    while(curso == verificador )
+    {
     curso=Console.ReadLine();
+    foreach ( string item in cursoYSuPlata.Keys)
+    {
+        
+        if (curso == item)
+        {
+            System.Console.WriteLine("curso ya ingresado");
+            verificador = item;
+        }
+        
+    }
+    }
     return curso;
 }
 int pedirAlumnos()
@@ -62,7 +77,7 @@ int pedirAlumnos()
     } 
 return alumnos;
 }
-int valifarDineroDelCumple(int alumnos, ref int totalPlata, ref int totalDeCurso)
+int valifarDineroDelCumple(int alumnos, ref int totalPlata, ref int totalDeCurso,Dictionary<string ,int> cursoYSuPlata )
 {
     int regalo;
     System.Console.WriteLine("Ingrese cuanta cantidad le va a regalar al cumplañero: ");
@@ -77,13 +92,16 @@ int valifarDineroDelCumple(int alumnos, ref int totalPlata, ref int totalDeCurso
     return regalo;
 }
 }
-void opcion2( int totalPlata,  int cantCurso,  int elQueMas,  string cursoMayor)
+void opcion2( int totalPlata,  int cantCurso,  int elQueMas,  string cursoMayor, Dictionary<string ,int> cursoYSuPlata)
 {
     int promedio  = totalPlata/cantCurso;
     System.Console.WriteLine("El curso " + cursoMayor + " fue el que mas regalo con un total de: " + elQueMas + " pesos");
     System.Console.WriteLine("La cantidad de plata de las diviciones son: " + totalPlata);
     System.Console.WriteLine("El promedio es: " + promedio);
     System.Console.WriteLine("La cantidad de cursos que regalaron plata fueron: "+ cantCurso);
+
+   
+    
 }
 string opcion3(string respuesta)
 {

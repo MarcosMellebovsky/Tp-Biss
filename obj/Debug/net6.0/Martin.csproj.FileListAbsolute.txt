@@ -1,0 +1,15 @@
+Z:\PROGRAMACION\anashe\bin\Debug\net6.0\Martin.exe
+Z:\PROGRAMACION\anashe\bin\Debug\net6.0\Martin.deps.json
+Z:\PROGRAMACION\anashe\bin\Debug\net6.0\Martin.runtimeconfig.json
+Z:\PROGRAMACION\anashe\bin\Debug\net6.0\Martin.dll
+Z:\PROGRAMACION\anashe\bin\Debug\net6.0\Martin.pdb
+Z:\PROGRAMACION\anashe\obj\Debug\net6.0\Martin.csproj.AssemblyReference.cache
+Z:\PROGRAMACION\anashe\obj\Debug\net6.0\Martin.GeneratedMSBuildEditorConfig.editorconfig
+Z:\PROGRAMACION\anashe\obj\Debug\net6.0\Martin.AssemblyInfoInputs.cache
+Z:\PROGRAMACION\anashe\obj\Debug\net6.0\Martin.AssemblyInfo.cs
+Z:\PROGRAMACION\anashe\obj\Debug\net6.0\Martin.csproj.CoreCompileInputs.cache
+Z:\PROGRAMACION\anashe\obj\Debug\net6.0\Martin.dll
+Z:\PROGRAMACION\anashe\obj\Debug\net6.0\refint\Martin.dll
+Z:\PROGRAMACION\anashe\obj\Debug\net6.0\Martin.pdb
+Z:\PROGRAMACION\anashe\obj\Debug\net6.0\Martin.genruntimeconfig.cache
+Z:\PROGRAMACION\anashe\obj\Debug\net6.0\ref\Martin.dll
